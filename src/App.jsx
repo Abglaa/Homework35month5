@@ -1,27 +1,19 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
-import CounterPage from "./pages/CounterPage";
-import TodoListPage from "./pages/TodoListPage";
-import UserPage from "./pages/UserPage";
-import PostEditPage from "./pages/PostEditPage";
-import PostsListPage from "./pages/PostsListPage";
-
+import NotFound from "./pages/notFound/NotFound.jsx";
+import ProductsPage from "./pages/ProductsPage.jsx";
 
 function App() {
   return (
     <>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route index element={<span className="text-2xl">Home Page</span>} />
-          <Route path="counter" element={<CounterPage />} />
-          <Route path="user" element={<UserPage />} />
-          <Route path="todos" element={<TodoListPage />} />
-          <Route path="posts" element={<PostsListPage />} />
-          <Route path="posts/:id/edit" element={<PostEditPage />} />
+          <Route index element={<span>Home Page</span>} />
+            <Route path='products' element={<ProductsPage/>}/>
           <Route
             path="*"
-            element={<span className="text-2xl">Not found</span>}
+            element={<NotFound/>}
           />
         </Route>
       </Routes>

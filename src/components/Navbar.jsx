@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import {useSelector} from "react-redux";
 
 const activeLinkClass = ({ isActive }) => {
   return isActive
@@ -7,6 +8,8 @@ const activeLinkClass = ({ isActive }) => {
 };
 
 const Navbar = () => {
+  const {amountOfProductsToBuy} = useSelector(state => state.productReducer)
+
   return (
     <nav className="sticky top-0 z-10 flex justify-center align-center h-16 col-span-4 bg-neutral-50 border-b bg-opacity-75 backdrop-blur backdrop-filter border-b-slate-300 [&>*]:flex  [&>*]:items-center [&>*]:list-none [&>*]:gap-2 [&>*]:sm:gap-6 ">
       <ul>
@@ -16,24 +19,12 @@ const Navbar = () => {
           </NavLink>
         </li>
         <li>
-          <NavLink to="/counter" className={activeLinkClass}>
-            Counter
+          <NavLink to="/products" className={activeLinkClass}>
+            Product
           </NavLink>
         </li>
         <li>
-          <NavLink to="/user" className={activeLinkClass}>
-            User
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/posts" className={activeLinkClass}>
-            Posts
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/todos" className={activeLinkClass}>
-            Todos
-          </NavLink>
+          <span>{amountOfProductsToBuy}</span>
         </li>
       </ul>
     </nav>
