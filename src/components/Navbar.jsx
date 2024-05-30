@@ -24,7 +24,7 @@ const Navbar = () => {
           </NavLink>
         </li>
         <li>
-          <span>{amountOfProductsToBuy}</span>
+          <span>✉{amountOfProductsToBuy}</span>
         </li>
       </ul>
     </nav>

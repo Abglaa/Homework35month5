@@ -2,8 +2,30 @@
     display: flex;
     flex-direction: column;
     height: 200px;
-    width: 200px;
+    width: 300px;
     background-color: rgba(128, 128, 128, 0.5);
     margin: 20px auto;
+    justify-content: space-around;
 }
 
+ .btn {
+    width: 100px;
+    background-color: #00ff0d;
+    margin: 0 auto;
+    text-align: center;
+    height: 30px;
+    border: none;
+    border-radius: 18px;
+    font-weight: bold;
+    color: #000000;
+
+}
+.name {
+    color: darkcyan;
+    font-size: 28px;
+}
+.price {
+    color: blueviolet;
+    font-weight: bold;
+    font-size: large;
+}
